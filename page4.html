@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Four - Redeemable Love Coupons</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-6 md:p-10 select-none">
+
+    <!-- SCRAPBOOK CONTAINER -->
+    <div class="scrapbook-book relative w-full max-w-4xl bg-[#f8ece9] rounded-2xl overflow-hidden my-auto border-4 border-[#e2cdc7]">
+        <div class="grid grid-cols-12 min-h-[780px]">
+            
+            <!-- LEFT COLUMN: SPIRAL BINDER RINGS -->
+            <div class="col-span-1 border-r-2 border-[#d8beba] bg-[#efe1dc] relative flex flex-col justify-between py-10 items-center z-30 shadow-inner">
+                <script>
+                    for(let i=0; i<14; i++) {
+                        document.write(`
+                            <div class="relative w-full flex justify-center items-center my-1.5">
+                                <div class="spiral-hole w-3 h-3 rounded-full"></div>
+                                <div class="absolute -left-2 w-7 h-3 rounded-full border-t-4 border-b-2 border-gray-400 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-500 shadow-md transform -rotate-12"></div>
+                            </div>
+                        `);
+                    }
+                </script>
+            </div>
+
+            <!-- RIGHT COLUMN: MAIN PAGE CONTENT -->
+            <div class="col-span-11 paper-page relative p-6 md:p-10 flex flex-col justify-between overflow-hidden">
+                
+                <!-- HEADER SECTION -->
+                <div class="text-center space-y-1 mt-1 z-10">
+                    <p class="tracking-[0.3em] text-xs md:text-sm font-semibold text-[#8c5962] uppercase">Chapter Four</p>
+                    <div class="text-[#b35368] text-sm">♡</div>
+                    <h1 class="font-serif text-2xl md:text-4xl font-bold text-[#5a222e] tracking-tight py-0.5" style="font-family: 'Playfair Display', serif;">
+                        Your Birthday Coupons
+                    </h1>
+                    <p class="font-handwriting text-base md:text-lg text-[#b35368]" style="font-family: 'Caveat', cursive;">
+                        Redeemable anytime! Click to claim your gift ♡
+                    </p>
+                </div>
+
+                <!-- COUPONS GRID -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 max-w-xl mx-auto w-full z-10">
+                    
+                    <!-- Coupon 1 -->
+                    <div class="coupon-card p-4 rounded-xl text-center relative group cursor-pointer" onclick="redeemCoupon(this, false)">
+                        <div class="text-[10px] uppercase tracking-widest text-[#8c5962] font-bold">Birthday Pass</div>
+                        <h3 class="font-serif text-lg font-bold text-[#5a222e] my-1" style="font-family: 'Playfair Display', serif;">Free Back Massage 💆‍♂️</h3>
+                        <p class="text-xs text-gray-500 italic">Valid anytime you feel tired or stressed.</p>
+                        <button class="claim-btn mt-3 bg-[#b35368] text-white text-xs px-5 py-1.5 rounded-full font-medium shadow-sm group-hover:bg-[#5a222e] transition-colors">
+                            Redeem Coupon
+                        </button>
+                    </div>
+
+                    <!-- Coupon 2 -->
+                    <div class="coupon-card p-4 rounded-xl text-center relative group cursor-pointer" onclick="redeemCoupon(this, false)">
+                        <div class="text-[10px] uppercase tracking-widest text-[#8c5962] font-bold">Birthday Pass</div>
+                        <h3 class="font-serif text-lg font-bold text-[#5a222e] my-1" style="font-family: 'Playfair Display', serif;">Movie Night Pick 🍿</h3>
+                        <p class="text-xs text-gray-500 italic">You pick the movie, snacks on me!</p>
+                        <button class="claim-btn mt-3 bg-[#b35368] text-white text-xs px-5 py-1.5 rounded-full font-medium shadow-sm group-hover:bg-[#5a222e] transition-colors">
+                            Redeem Coupon
+                        </button>
+                    </div>
+
+                    <!-- Coupon 3 -->
+                    <div class="coupon-card p-4 rounded-xl text-center relative group cursor-pointer" onclick="redeemCoupon(this, false)">
+                        <div class="text-[10px] uppercase tracking-widest text-[#8c5962] font-bold">Birthday Pass</div>
+                        <h3 class="font-serif text-lg font-bold text-[#5a222e] my-1" style="font-family: 'Playfair Display', serif;">Favorite Dinner 🍝</h3>
+                        <p class="text-xs text-gray-500 italic">I cook whatever meal you request.</p>
+                        <button class="claim-btn mt-3 bg-[#b35368] text-white text-xs px-5 py-1.5 rounded-full font-medium shadow-sm group-hover:bg-[#5a222e] transition-colors">
+                            Redeem Coupon
+                        </button>
+                    </div>
+
+                    <!-- Coupon 4: Win Argument (With Playful Joke) -->
+                    <div class="coupon-card p-4 rounded-xl text-center relative group cursor-pointer" onclick="redeemCoupon(this, true)">
+                        <div class="text-[10px] uppercase tracking-widest text-[#8c5962] font-bold">Birthday Pass</div>
+                        <h3 class="font-serif text-lg font-bold text-[#5a222e] my-1" style="font-family: 'Playfair Display', serif;">Win Any Argument 🏆</h3>
+                        <p class="text-xs text-gray-500 italic">Instant win card, no questions asked!</p>
+                        <button class="claim-btn mt-3 bg-[#b35368] text-white text-xs px-5 py-1.5 rounded-full font-medium shadow-sm group-hover:bg-[#5a222e] transition-colors">
+                            Redeem Coupon
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- FINAL CELEBRATION BUTTON -->
+                <div class="text-center z-10 mb-2">
+                    <button onclick="launchBigCelebration()" class="bg-[#5a222e] hover:bg-[#8c5962] text-white font-medium text-sm px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:scale-105 flex items-center gap-2 mx-auto">
+                        <i class="fa-solid fa-cake-candles text-amber-300"></i>
+                        <span>Happy Birthday My Love! I love you so much 🎉</span>
+                    </button>
+                </div>
+
+                <!-- FOOTER & PAGE NAVIGATION -->
+                <div class="flex justify-between items-center pt-4 border-t border-[#ebdad5] z-10">
+                    <a href="page3.html" class="bg-[#e8dad6] hover:bg-[#d4c0bb] text-[#5a222e] font-medium text-xs md:text-sm px-5 py-2 rounded-full transition-all duration-300 flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-left text-xs"></i>
+                        <span>Previous</span>
+                    </a>
+                    
+                    <span class="font-serif text-xs text-[#8c5962] font-semibold tracking-wider">04 / END ♡</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAYFUL JOKE MODAL FOR ARGUMENT COUPON -->
+    <div id="joke-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-[#f8ece9] border-4 border-[#b35368] rounded-2xl p-6 md:p-8 text-center max-w-md w-full shadow-2xl relative">
+            <div class="text-4xl md:text-5xl mb-2">🤭 💅 😉</div>
+            <h2 class="font-serif text-2xl font-bold text-[#5a222e] mb-2" style="font-family: 'Playfair Display', serif;">
+                Hold On A Second!
+            </h2>
+            <p class="font-handwriting text-xl md:text-2xl text-[#b35368] my-3 leading-snug" style="font-family: 'Caveat', cursive;">
+                I'm joking babe, but maybe just for your birthday! 😉 ♡
+            </p>
+            <button onclick="closeJokeModal()" class="mt-3 bg-[#b35368] hover:bg-[#5a222e] text-white font-medium text-sm px-8 py-2.5 rounded-full transition-colors shadow-md">
+                Okay fine, accepted! 😂
+            </button>
+        </div>
+    </div>
+
+    <!-- Celebration & Redeem Scripts -->
+    <script>
+    // ⚠️ REPLACE 'YOUR_FORMSPREE_CODE' WITH YOUR ACTUAL FORMSPREE CODE
+    const FORMSPREE_URL = "https://formspree.io/f/xyekavrd";
+    let currentArgumentCard = null;
+
+    function sendToEmail(eventTitle, details) {
+        fetch(FORMSPREE_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                event: eventTitle,
+                details: details,
+                time: new Date().toLocaleString()
+            })
+        });
+    }
+
+    function redeemCoupon(card, isArgumentCoupon) {
+        if (isArgumentCoupon && !card.classList.contains('coupon-claimed')) {
+            currentArgumentCard = card;
+            document.getElementById('joke-modal').classList.remove('hidden');
+            confetti({ particleCount: 60, spread: 70, origin: { y: 0.5 } });
+            
+            // Email alert for trying to redeem argument coupon
+            sendToEmail("Coupon Attempt 🤭", "Tried to redeem: Win Any Argument Coupon!");
+            return;
+        }
+
+        if (!card.classList.contains('coupon-claimed')) {
+            markAsClaimed(card);
+        }
+    }
+
+    function markAsClaimed(card) {
+        card.classList.add('coupon-claimed');
+        const btn = card.querySelector('.claim-btn');
+        btn.innerText = 'CLAIMED! ✓';
+        btn.classList.remove('bg-[#b35368]', 'group-hover:bg-[#5a222e]');
+        btn.classList.add('bg-gray-400');
+        
+        const couponTitle = card.querySelector('h3').innerText;
+        
+        // Send email alert to you with the coupon he claimed!
+        sendToEmail("Coupon Redeemed! 🎉", `He claimed: ${couponTitle}`);
+        
+        confetti({
+            particleCount: 50,
+            spread: 60,
+            origin: { y: 0.6 }
+        });
+    }
+
+    function closeJokeModal() {
+        document.getElementById('joke-modal').classList.add('hidden');
+        if (currentArgumentCard) {
+            markAsClaimed(currentArgumentCard);
+        }
+    }
+
+    function launchBigCelebration() {
+        sendToEmail("Celebration Triggered! 🥳", "Clicked the Happy Birthday button at the end!");
+
+        var duration = 3 * 1000;
+        var animationEnd = Date.now() + duration;
+        var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        var interval = setInterval(function() {
+            var timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            var particleCount = 50 * (timeLeft / duration);
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+        }, 250);
+    }
+
+    function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+</script>
+</body>
+</html>
